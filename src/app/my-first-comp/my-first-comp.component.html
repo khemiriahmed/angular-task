@@ -24,7 +24,7 @@
      <p><strong>Message :{{message}} </strong></p>
     </div> -->
 
-    <table *ngIf="isSubmitted" >
+    <!-- <table *ngIf="isSubmitted" >
         <thead>
             <tr>
                 <th>Name</th>
@@ -41,5 +41,12 @@
                 <td>{{msg.message}}</td>
             </tr>
         </tbody>
-    </table>
+    </table> -->
+
+    <div class="flex-container" *ngIf="isSubmitted">
+        <app-message-details *ngFor="let msg of messages; let i = index" 
+        [message] = "msg"
+        
+        ></app-message-details>
+    </div>
 </div>
